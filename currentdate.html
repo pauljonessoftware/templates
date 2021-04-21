@@ -1,0 +1,92 @@
+<script>
+
+    /******************************************************************
+     * 
+     *  Author:     Paul A. Jones, Jr.
+     *              Developer
+     *              pauljonessoftware@gmail.com
+     *              LinkedIn: https://twitter.com/paulajonesjr
+     *              Twitter: @paulajonesjr
+     *
+     *  Date:       4/1/2021
+     *
+     *  Exercise:   Display current date and time in the following
+     *              format:
+     *
+     *  Format:     Today is : {day} 
+     *              Current Time is : hh AM/PM : mm : ss
+     * 
+     *  Project #:  1
+    ******************************************************************/
+
+    let getNameOfDay = (day) => {
+        let name;
+
+        switch(day) {
+            case 1:
+                name = "Monday"
+                break;
+            case 2:
+                name = "Tuesday"
+                break;
+            case 3:
+                name = "Wednesday"
+                break;
+            case 4:
+                name = "Thursday"
+                break;
+            case 5:
+                name = "Friday"
+                break;
+            case 6:
+                name = "Saturday"
+                break;
+            case 7:
+                name = "Sunday"
+                break;
+        }
+
+        return name;
+    }    
+
+    let displayDate = (day, hour, minute, second) => {
+        console.log("Today is : " + getNameOfDay(day) + ".");
+
+        let strHour = hour < 12 ? "0" + hour + " AM" : hour + " PM";
+        let strMinute = minute < 10 ? "0" + minute : minute;
+        let strSecond = second < 10 ? "0" + second : second;
+
+        console.log(strHour + " : " + strMinute + " : " + strSecond);
+    } 
+
+    // get current date
+    let today = Date().toString();
+
+    // get date object
+    let todaysDate = new Date(today);
+
+    // get date parts from date object
+    let month = todaysDate.getMonth();
+    let day = todaysDate.getDate();
+    let dayOfWeek = todaysDate.getDay();
+    let year = todaysDate.getFullYear();
+    let hour = todaysDate.getHours();
+    let minute = todaysDate.getMinutes();
+    let second = todaysDate.getSeconds();
+
+    /*
+    uncomment to display and individual date parts    
+    console.log("Month : " + month);
+    console.log("Day of week : " + dayOfWeek);
+    console.log("Day of month: " + day);
+    console.log("Year : " + year);
+    console.log("Name of Day : " + getNameOfDay(dayOfWeek));
+    console.log("Hour : " + hour);
+    console.log("Minute : " + minute);
+    console.log("Second : " + second);
+    */
+
+    // display formatted date
+    displayDate(dayOfWeek, hour, minute, second);
+
+</script>

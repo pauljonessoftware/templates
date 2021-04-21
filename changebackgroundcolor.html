@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Background Color Changer Project</title>
+        <script>
+            /*
+                Background color changer project
+            */
+            function Init() {
+                var elem = document.getElementById("palette");
+                elem.style.backgroundColor = "blue";
+                elem.style.height = "400px";
+                elem.style.width = "500px";
+            }
+
+            function ChangeBackgroundColor() {
+                var elem = document.getElementById("palette");
+
+                elem.style.backgroundColor === "blue" ? 
+                    elem.style.backgroundColor = "red" : 
+                    elem.style.backgroundColor = "blue";
+            }
+        </script>
+    </head>
+    <body onload="Init()"> 
+        <div id="palette">
+            <button id="btnChangeColor" onclick="ChangeBackgroundColor()">Click Me</button>
+        </div> 
+    </body>
+</html>

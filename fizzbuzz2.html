@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>FizzBuzz Project</title>
+        <script>
+            
+            /*
+                FizzBuzz project
+            */
+
+            const DivideNumber = () => {
+                var txtNumber = document.getElementById("txtNumber");
+                var number = txtNumber.value;
+                var msg = "";
+
+                if(number % 3 === 0)
+                    msg = "Fizz";
+                if(number % 5 === 0)
+                    msg = "Buzz";
+                if(number % 5 === 0 && number % 3 === 0)
+                    msg = "FizzBuzz";
+                if(msg.length === 0)
+                    msg = number;
+                
+                alert(msg);
+            }
+
+        </script>
+    </head>
+    <body> 
+        <div>
+            Enter Number: <input type="text" id="txtNumber"/>
+            <button id="btnSubmit" onclick="DivideNumber()">Submit</button>
+        </div>
+    </body>
+</html>

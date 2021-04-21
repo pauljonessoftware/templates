@@ -1,0 +1,37 @@
+
+<script>
+    let addNode = () => {
+        var value = document.getElementById("txtNode").value;
+        var ul = document.getElementById("ul");
+        var node = document.createElement("li");
+        var textNode = document.createTextNode(value);
+        node.appendChild(textNode);
+        ul.appendChild(node);  
+
+        var txtNode = document.getElementById("txtNode");
+        txtNode.value = '';        
+    }
+
+    let resetList = () => {
+        var ul = document.getElementById("ul");
+        ul.innerHTML = '';
+    }
+</script>
+
+<h1>Course Schedule</h1>
+
+<p>
+
+Enter Course: <input id="txtNode" type="text">
+
+<button 
+    id="btn" 
+    name="btn" 
+    onclick="addNode()">Add Course</button>
+
+<button 
+    id="btnRemove" 
+    onclick="resetList()">Reset Schedule</button>
+
+<ul id="ul"></ul>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Stop Watch</title>
+        <style>
+            .canvas {
+                background-color: #FFA500;
+                width: 600px;
+                height: 400px;
+            }
+
+            .stopwatch {
+                text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 24pt;
+                color:#fff;
+                width:100%;
+                border: 10px;
+                padding: 10px;
+            }
+
+            .buttons {
+                width:100%;
+                text-align: center;
+                border: 10px;
+                padding: 10px;                
+            }
+
+            .btn {
+                -webkit-border-radius: 6;
+                -moz-border-radius: 6;
+                border-radius: 6px;
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 20px;
+                background: #FFA500;
+                padding: 10px 20px 10px 20px;
+                border: solid #fcfcfc 2px;
+                text-decoration: none;
+            }
+
+        </style>
+
+        <script>
+
+            var timeOutVar;
+
+            var Start = () => timeOutVar = setInterval(startClock, 1000);
+
+            var Stop = () => timeOutVar = clearInterval(timeOutVar);
+
+            var Reset = () => {
+                clearTimeout(timeOutVar);
+                document.getElementById('display').innerHTML = '&nbsp;';
+            }
+
+            var startClock = () => {
+                var clock = new Date().toLocaleTimeString();
+                var display = document.getElementById('display');
+                display.innerHTML = clock;                
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div class="canvas">
+            <p class="stopwatch">STOPWATCH</p>
+            <P class="stopwatch">VANILLA JAVASCRIPT STOPWATCH</p>
+            <p class="stopwatch" id="display">&nbsp;</p>
+            <p class="buttons">
+                <button class="btn" onclick="Start()">Start</button>
+                <button class="btn" onClick="Stop()">Stop</button>
+                <button class="btn" onclick="Reset()">Reset</button>
+            </p>
+        </div>
+    </body>
+</html>
